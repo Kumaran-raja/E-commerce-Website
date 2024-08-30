@@ -1,5 +1,6 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import './cart.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cart() {
   const [error, setError] = useState(null);
@@ -10,6 +11,11 @@ export default function Cart() {
   const initialState = {
     cartItems: []
   };
+
+  const navigate=useNavigate();
+  const navigateProductPage=()=>{
+    navigate('/product')
+  }
 
   function reducer(state, action) {
     switch (action.category) {
@@ -78,18 +84,16 @@ export default function Cart() {
         {state.cartItems.map(data => (
           <div key={data.id}>
             <div className='product_cart'>
-              <div>
+              <div onClick={navigateProductPage}>
                 <img className='cart_image' src={data.image} alt={data.title} />
               </div>
-              <div>
+              <div onClick={navigateProductPage}>
                 <h4 className='cart_product_name'>{data.title}</h4>
                 <h6 className='cart_specification'>{data.category}</h6>
                 <p className='cart_seller_name'>Seller Name: <strong>{sellerName}</strong></p>
                 <h2 className='cart_item_price'>${(data.price * data.quantity).toFixed(2)}</h2>
               </div>
-              <div>
-                <p className='deliveryDate'>Delivery by <strong>{date}</strong></p>
-              </div>
+             
             </div>
             <div className='cart_reducer'>
               <div className='item_count_container'>

@@ -1,25 +1,43 @@
-// import React from 'react'
-import './CategoryPage.css'
-import React,{useState,useEffect} from 'react'
-function CategoryPage() {
-  const[product,setProduct]=useState([]);
-  const[error,setError]=useState("error");
-  useEffect(()=>{
-    fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(data=>{
-              setProduct(data);
-            })
-            .catch(error=>{
-              setError(error)
-            })
+import { useNavigate } from 'react-router-dom';
+import './CategoryPage.css';
+import React, { useState, useEffect } from 'react';
 
-  })
+function CategoryPage() {
+  const [product, setProduct] = useState([]);
+  const [error, setError] = useState("error");
+  const [cartStates, setCartStates] = useState({});
+
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then(res => res.json())
+      .then(data => {
+        setProduct(data);
+        const initialCartStates = {};
+        data.forEach(item => {
+          initialCartStates[item.id] = "Add to Cart";
+        });
+        setCartStates(initialCartStates);
+      })
+      .catch(error => {
+        setError(error);
+      });
+  }, []);
+
+  const navigate = useNavigate();
+  const navigateProductPage = () => {
+    navigate('/Product');
+  };
+
+  const changeCart = (id) => {
+    setCartStates((prevCartStates) => ({
+      ...prevCartStates,
+      [id]: prevCartStates[id] === "Add to Cart" ? "Added to Cart" : "Add to Cart"
+    }));
+  };
 
   return (
-      <div className='split_filer_space'> 
-   
-        <div className='filter'>
+    <div className='split_filer_space'>
+      <div className='filter'>
             <h6 class="cutomized_filter">Customized Filter</h6>
             <hr/>
             <p className="filter_text">Category</p>
@@ -87,7 +105,6 @@ function CategoryPage() {
                                 <option value="">Baby Products</option>
                                 <option value="">Kids' Clothing</option>
 
-                              
                             </optgroup>
 {/* <!-- Grocery & Gourmet Food --> */}
                             <optgroup id="grocery" class="all_category">
@@ -103,15 +120,12 @@ function CategoryPage() {
                                 <option value="">Car Accessories</option>
                                 <option value="">Motorbike Accessories</option>
                                 <option value="">Car Care</option>
-
-                              
                             </optgroup>
 {/* <!-- Health & Wellness --> */}
                             <optgroup id="health" class="all_category">
                                 <option value="">Health Devices</option>
                                 <option value="">Supplements</option>
                                 <option value="">Personal Care</option>
-                              
                             </optgroup>
 {/* <!-- Office- Supplies --> */}
                             <optgroup id="office" class="all_category">
@@ -150,36 +164,36 @@ function CategoryPage() {
                     </select>
         </div> 
 
-        <div>
-          {
-          product.map(data=>
-            <div>
-            <div className='product_page_container' key={data.id}>
-              <div>
-                <img className='product_image' src={data.image} alt='cart Image'/>
-              
+      <div>
+        {product.map(data =>
+          <div key={data.id}>
+            <div className='product_page_container'>
+              <div onClick={navigateProductPage}>
+                <img className='product_image' src={data.image} alt='cart Image' />
               </div>
-              <div>
-                <h4 className='item_name'>{data.title}</h4> 
+              <div onClick={navigateProductPage}>
+                <h4 className='item_name'>{data.title}</h4>
                 <p className='product_specification'>{data.category}</p>
                 <p className='product_specification'>Specification 2</p>
                 <p className='product_specification'>Specification 3</p>
-                <p>Offer</p>
+                <p className='product_specification'>Offer</p>
               </div>
               <div>
                 <h2 className='item_price'>$ {data.price}</h2>
                 <p className='delivetyDate'>Delivery Date</p>
-                <button className='add_to_cart'>Add to Cart</button>
+                <button 
+                  className='add_to_cart' 
+                  onClick={() => changeCart(data.id)}>
+                  {cartStates[data.id]}
+                </button>
               </div>
             </div>
-              <hr></hr>
-              </div>
-    )}
-      
-        </div>
-       
-  </div>
-  )
+            <hr />
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
 
-export default CategoryPage
+export default CategoryPage;

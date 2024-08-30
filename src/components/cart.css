@@ -14,8 +14,9 @@
 }
 .product_cart{
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 30% 70%;
     align-items: center;
+    gap: 20px;
     row-gap: 20px;
     padding: 2px;
 }
@@ -239,11 +240,10 @@
     .cart_image{
         height: 150px;
         width: 150px;
+        padding: 15px;
     }
     .cart_product_list_side{
         border: 1px solid;
         margin-left: 30px;
-        overflow-x: scroll;
-        height: 80vh;
     }
 }
