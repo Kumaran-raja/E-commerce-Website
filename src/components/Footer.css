@@ -27,7 +27,13 @@
     content: "";
     display: block;
 }
-
+.copy_rights{
+    text-align: center;    
+    background-color: rgb(33, 31, 31);
+    padding: 10px;
+    margin: 0px;
+    color: white;
+   }
 
 @media (min-width: 320px) and (max-width: 376px) {
     .Footer_Space{

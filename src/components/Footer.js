@@ -11,7 +11,7 @@ function Footer() {
             <div>
                 <h5 className='footer_title'>About</h5>
                 <Link to='/contactus' className='footer_link'>Contact Us</Link>
-                <Link className='footer_link' to='/contactus'>
+                <Link className='footer_link' to='/aboutus'>
                 About Us
                 </Link>
                 <Link className='footer_link' to='/contactus'>
@@ -62,6 +62,7 @@ function Footer() {
             </div>
 
         </div>
+        <p className='copy_rights'>&copy; 2024 Vibevault. All Rights Reserved.</p>
     </div>
   )
 }

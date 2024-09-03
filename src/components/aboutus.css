@@ -1,0 +1,14 @@
+.about_page_headlines{
+    font-size: 25px;
+    margin: 20px 0px;
+    font-weight: bold;
+}
+.about_page_content{
+    text-align: justify;
+}
+.about_sub_title{
+    font-size: 20px;
+    padding: 10px 0px;
+    margin: 0px;
+    font-weight: 500;
+}

@@ -6,7 +6,6 @@ function CategoryPage() {
   const [product, setProduct] = useState([]);
   const [error, setError] = useState("error");
   const [cartStates, setCartStates] = useState({});
-
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
@@ -21,7 +20,7 @@ function CategoryPage() {
       .catch(error => {
         setError(error);
       });
-  }, []);
+  },[]);
 
   const navigate = useNavigate();
   const navigateProductPage = () => {
@@ -57,81 +56,81 @@ function CategoryPage() {
             <p class="filter_text">Product</p>
             <select name="" id="product">
                             {/* <!-- Electronics Product --> */}
-                            <optgroup id="electronics" class="all_category">
-                                <option value="">Mobile Phones</option>
-                                <option value="">Computers & Tablets</option>
-                                <option value="">TV & Home Appliances</option>
-                                <option value="">Cameras</option>
+                            <optgroup id="electronics" class="all_category" label='Electronics Category'>
+                                <option value="mobile">Mobile Phones</option>
+                                <option value="computer">Computers & Tablets</option>
+                                <option value="tv">TV & Home Appliances</option>
+                                <option value="camera">Cameras</option>
                             </optgroup>
                             {/* <!-- Fashion Products--> */}
                             <optgroup id="fashion" class="all_category" label="Fashion Category">
-                                <option value="">Men</option>
-                                <option value="">Women</option>
-                                <option value="">Kids</option>
+                                <option value="men">Men</option>
+                                <option value="women">Women</option>
+                                <option value="kids">Kids</option>
                             
                             </optgroup>
                            {/* <!-- Home & Furniture --> */}
-                            <optgroup id="home" class="all_category">
-                                <option value="">Furniture</option>
-                                <option value="">Home Decor</option>
-                                <option value="">Kitchen & Dining</option>
+                            <optgroup id="home" class="all_category" label='Furnitures category'>
+                                <option value="furnitures">Furniture</option>
+                                <option value="home">Home Decor</option>
+                                <option value="kitchen">Kitchen & Dining</option>
 
                             </optgroup>
 {/* <!-- Beauty & Personal Care --> */}
-                            <optgroup id="beauty" class="all_category">
-                                <option value="">Skincare</option>
-                                <option value="">Haircare</option>
-                                <option value="">Makeup</option>
-                                <option value="">Personal Care Appliances</option>
+                            <optgroup id="beauty" class="all_category" label='Beauty Category'>
+                                <option value="skincare">Skincare</option>
+                                <option value="haircare">Haircare</option>
+                                <option value="makeup">Makeup</option>
+                                <option value="personalcare">Personal Care Appliances</option>
                              
                             </optgroup>
 {/* <!-- Sports & Outdoors --> */}
-                            <optgroup id="sports" class="all_category">
-                                <option value="">Sports Equipment</option>
-                                <option value="">Apparel</option>
-                                <option value="">Nutrition & Supplements</option>
+                            <optgroup id="sports" class="all_category" label='Sports Category'>
+                                <option value="sport">Sports Equipment</option>
+                                <option value="apparel">Apparel</option>
+                                <option value="nutrition">Nutrition & Supplements</option>
                               
                             </optgroup>
 {/* <!-- Books & Media --> */}
-                            <optgroup id="books" class="all_category">
-                                <option value="">Books</option>
-                                <option value="">Music</option>
-                                <option value="">Movies</option>
+                            <optgroup id="books" class="all_category" label='Books Category'>
+                                <option value="books">Books</option>
+                                <option value="music">Music</option>
+                                <option value="movies">Movies</option>
                               
                             </optgroup>
 {/* <!-- Toys, Kids & Baby --> */}
-                            <optgroup id="toys" class="all_category">
-                                <option value="">Toys</option>
-                                <option value="">Baby Products</option>
-                                <option value="">Kids' Clothing</option>
+                            <optgroup id="toys" class="all_category" label='Baby Toys Category'>
+                                <option value="toys">Toys</option>
+                                <option value="baby">Baby Products</option>
+                                <option value="kids">Kids' Clothing</option>
 
                             </optgroup>
 {/* <!-- Grocery & Gourmet Food --> */}
-                            <optgroup id="grocery" class="all_category">
+                            <optgroup id="grocery" class="all_category" label='Grocery Category'>
 
-                                 <option value="">Beverages</option>
-                                 <option value="">Snacks</option>
-                                 <option value="">Pantry Staples</option>
-                                 <option value="">Gourmet Food</option>
+                                 <option value="beverages">Beverages</option>
+                                 <option value="snacks">Snacks</option>
+                                 <option value="pantry">Pantry Staples</option>
+                                 <option value="gourmet">Gourmet Food</option>
                               
                             </optgroup>
 {/* <!-- Automotive --> */}
-                            <optgroup id="automative" class="all_category">
-                                <option value="">Car Accessories</option>
-                                <option value="">Motorbike Accessories</option>
-                                <option value="">Car Care</option>
+                            <optgroup id="automative" class="all_category" label='Automative Category'>
+                                <option value="car">Car Accessories</option>
+                                <option value="motorbike">Motorbike Accessories</option>
+                                <option value="carcare">Car Care</option>
                             </optgroup>
 {/* <!-- Health & Wellness --> */}
-                            <optgroup id="health" class="all_category">
-                                <option value="">Health Devices</option>
-                                <option value="">Supplements</option>
-                                <option value="">Personal Care</option>
+                            <optgroup id="health" class="all_category" label='Health Category'>
+                                <option value="health">Health Devices</option>
+                                <option value="supplements">Supplements</option>
+                                <option value="personal">Personal Care</option>
                             </optgroup>
 {/* <!-- Office- Supplies --> */}
-                            <optgroup id="office" class="all_category">
-                                <option value="">Office Furniture</option>
-                                <option value="">Stationery</option>
-                                <option value="">Office Electronics</option>
+                            <optgroup id="office" class="all_category" label='Office Category'>
+                                <option value="office">Office Furniture</option>
+                                <option value="stationary">Stationery</option>
+                                <option value="office">Office Electronics</option>
                               
                             </optgroup>
                         </select>

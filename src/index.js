@@ -11,6 +11,7 @@ import Seller from './components/Seller';
 import ProductPage from './components/productPage';
 import ContactUs from './components/contactUs'
 import Footer from './components/Footer'
+import Aboutus from './components/aboutus'
 class Run extends React.Component {
   render() {
     return (
@@ -25,6 +26,8 @@ class Run extends React.Component {
             <Route path="/" element={<div><Header/><Home />  <Footer /></div>} />
             <Route path="/cart" element={<div><Header/><Cart />  <Footer /></div>} />
             <Route path="/seller" element={<div><Seller />  <Footer /></div>} />
+            <Route path="/aboutus" element={<div><Header />  <Aboutus /><Footer /></div>} />
+
             <Route path='/contactus' element={<ContactUs/>}/>
           </Routes>
           
