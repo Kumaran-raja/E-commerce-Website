@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-
+import './aboutus.css'
 function PaymentDetails() {
   return (
     <div className='section'>

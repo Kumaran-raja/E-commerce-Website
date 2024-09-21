@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet'
 import React from 'react'
+import './aboutus.css'
 
 function PrivacyPolicy() {
   return (

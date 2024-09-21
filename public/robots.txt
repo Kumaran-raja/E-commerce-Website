@@ -15,4 +15,5 @@ Allow: /FAQ
 Allow: /product
 Allow: /cancelandrefund
 
+Sitemap: https://vibevault.onrender.com/sitemap.xml
 
