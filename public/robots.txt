@@ -1,17 +1,3 @@
 User-agent: *
-Disallow: /contact
 Allow: /
-Allow: /login
-Allow: /signup
-Allow: /Category
-Allow: /seller
-Allow: /SellerRegister
-Allow: /security
-Allow: /privacy
-Allow: /termsofuse
-Allow: /shipping
-Allow: /payment
-Allow: /FAQ
-Allow: /product
-Allow: /cancelandrefund
 Sitemap: https://vibevault.onrender.com/sitemap.xml
