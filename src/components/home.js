@@ -11,7 +11,7 @@ import vehicles from './images/category/vehicles.png'
 import banner1 from './images/banner/image1.png';
 import banner2 from './images/banner/image2.png';
 import banner3 from './images/banner/image3.png';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import React,{useEffect, useState} from "react";
 
 function Category(){
@@ -30,6 +30,7 @@ function Category(){
             {name:"Toys",image:toys,alt:"toys Image"},
             {name:"Vehicles",image:vehicles,alt:"vehicles Image"},
         ]
+        
         return(
             <div>
                 {/* Category List*/}
@@ -50,7 +51,7 @@ function Carousel(){
     return(
         <div id="carouselExampleIndicators" className="carousel slide">
             <div className="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
@@ -91,8 +92,8 @@ function Popular(){
             })
     })
     const navigate=useNavigate();
-    const navigateProductPage=()=>{
-        navigate('/Product')
+    const navigateProductPage=(id)=>{
+        navigate(`/Product/${id}`)
     }
         return(
             <div>
@@ -104,7 +105,7 @@ function Popular(){
                 <div className="product_list">
                     {
                         product.map(data=>
-                            <div onClick={navigateProductPage} className="product_container" key={data.id}>
+                            <div onClick={()=>{navigateProductPage(data.id)}} className="product_container" key={data.id}>
                                 <img className="product_img" src={data.image} alt="Grocery Image"/>
                                 <p className="product_name">{data.title}</p>
                                 <p className="product_price">$ {data.price}</p>
@@ -131,9 +132,10 @@ function Electronics(){
                 setError(error)
             })
     })
+    
     const navigate=useNavigate();
-    const navigateProductPage=()=>{
-        navigate('/Product')
+    const navigateProductPage=(id)=>{
+        navigate(`/Product/${id}`)
     }
         return(
             <div>
@@ -145,13 +147,15 @@ function Electronics(){
                 <div className="product_list">
                     {
                         product.map(data=>
-                    <div className="product_container" key={data.id} onClick={navigateProductPage } >
+                    <div className="product_container" key={data.id} onClick={()=>{
+                        navigateProductPage(data.id)
+                    }} >
                         <img className="product_img" src={data.image} alt="Grocery Image"/>
                         <p className="product_name">{data.title}</p>
                         <p className="product_price">${data.price}</p>
                     </div>
                         )
-}
+                    }
                    
                 </div>
             </div>
@@ -172,35 +176,3 @@ class Run extends React.Component{
    
 }
 export default Run;
-
-
-
-
-{/* <div onClick={CategoryPage}>
-<img className="category_img" src={mobile} alt="Mobile Image"/>
-<p className="category_name">Mobiles</p>
-</div>
-<div onClick={CategoryPage}>
-<img className="category_img" src={fashion} alt="Fashion Image"/>
-<p className="category_name">Fashion</p>
-</div>
-<div onClick={CategoryPage}>
-<img className="category_img" src={electronics} alt="Electronics Image"/>
-<p className="category_name">Electronics</p>
-</div>
-<div onClick={CategoryPage}>
-<img className="category_img" src={furniture} alt="Furnitures Image"/>
-<p className="category_name">Furnitures</p>
-</div>
-<div onClick={CategoryPage}>
-<img className="category_img" src={travel} alt="Travel Image"/>
-<p className="category_name">Travel</p>
-</div>
-<div onClick={CategoryPage}>
-<img className="category_img" src={toys} alt="Toys Image"/>
-<p className="category_name">Toys</p>
-</div>
-<div onClick={CategoryPage}>
-<img className="category_img" src={vehicles} alt="Vehicles Image"/>
-<p className="category_name">Vehicles</p>
-</div> */}

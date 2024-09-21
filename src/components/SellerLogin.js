@@ -1,23 +1,22 @@
 import React from "react";
 
-import apple from './images/apple.png'
-import google from './images/google.png'
-import facebook from './images/facebook.png'
-import './signup.css'
+import './SellerLogin.css'
 import { useNavigate } from "react-router-dom";
-function Signup() {
+function SellerLogin() {
     const navigate=useNavigate();
-
-    const backToLogin=()=>{
-        navigate('/login')
+    const NavigateToRegister=()=>{
+        navigate('/SellerRegister')
+    }
+    const SellerDashboard=()=>{
+        navigate('/SellerDashboard')
     }
     const Submit=(event)=>{
         event.preventDefault();
           const email=document.getElementById('email').value;
           const password=document.getElementById('password').value;
-          const confirmpassword=document.getElementById('confirmpassword').value;
+          const otp=document.getElementById('otp').value;
           const emailPattern=/^[A-Za-z0-9._]+@[a-z]+\.[a-z]{2,4}$/;
-          if(email===''|| password===''||confirmpassword===''){
+          if(email===''|| password===''||otp===''){
             alert('Must Fill All Fields')
             return false;
           }
@@ -25,19 +24,18 @@ function Signup() {
             alert('Enter Correct Email')
             return false;
           }
-          else if(password!==confirmpassword){
-            alert('Confirm Password Not Matching')
+          else if(otp===''){
+            alert('enter Correct OTP')
             return false;
           }
           else{
-            alert("ok")
+            SellerDashboard();
             //Authentication 
           }
        }
-    // render(){
         const Top={
             marginTop: "60px",
-            marginBottom: "20px"
+            marginBottom: "20px",
         }
         return(
             <div>
@@ -45,7 +43,7 @@ function Signup() {
                     <div className="container-fluid text-center">
                         <div className="row" >
                             <div className="col-6 signup_page_content" >
-                                <h1 style={Top}>Register Now</h1>
+                                <h1 style={Top}>Seller Account</h1>
                                 <form onSubmit={Submit}>
                                     <div>
                                         <input id="email" className="input_box" placeholder="Email"/>
@@ -54,19 +52,11 @@ function Signup() {
                                         <input id="password" className="input_box" placeholder="Password"/>
                                     </div>
                                     <div>
-                                        <input id="confirmpassword" className="input_box" placeholder="Confirm Password"/>
+                                        <input id="otp" className="input_box" placeholder="OTP"/>
                                     </div>
-                                   <button className="signup_button">Signup</button>
-                                   <div className="hr-with-text">or</div>
-
-                          
+                                   <button className="signup_button">Login</button>
                                 </form>
-                                <div className="login_option">
-                                    <img style={{margin:"10px",cursor:"pointer"}} className="signup_type_icon" src={facebook}/>
-                                    <img style={{margin:"10px",cursor:"pointer"}} className="signup_type_icon" src={google}/>
-                                    <img style={{margin:"10px",cursor:"pointer"}} className="signup_type_icon" src={apple}/>
-                                </div>
-                                <p style={{marginTop:"20px"}}>Already Have an Account <span style={{textDecoration:"underline",color:"blue",cursor:"pointer"}} className="login" onClick={backToLogin}>Login Now</span></p>
+                                <p style={{marginTop:"20px"}}>Don't Have a Seller Account <span style={{textDecoration:"underline",color:"blue",cursor:"pointer"}} className="login" onClick={NavigateToRegister}>Register Now</span></p>
                             </div>
                             
                            
@@ -77,4 +67,4 @@ function Signup() {
         )
     // }
 }
-export default Signup;
+export default SellerLogin;

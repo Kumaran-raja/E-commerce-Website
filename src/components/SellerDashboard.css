@@ -1,0 +1,42 @@
+.seller_Dashboard_container{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    width: 100%;
+    padding: 0px;
+    height: 100vh;
+}
+.seller_menu{
+    background-color: antiquewhite;
+}
+.seller_content{
+    overflow-y: scroll;
+}
+.seller_content::-webkit-scrollbar{
+    display: none;
+}
+.Seller_image{
+    width: 100%;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.seller_menu_item{
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+@media (min-width: 769px) and (max-width: 1025px){
+    .seller_Dashboard_container{
+        grid-template-columns: 20% 80%;
+    }
+    .seller_menu_item{
+        font-size: 18px;
+    }
+}

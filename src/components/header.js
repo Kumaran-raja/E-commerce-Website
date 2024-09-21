@@ -17,7 +17,7 @@ class Header extends React.Component {
                 <div className="nav_part">
                   <input className="search" placeholder="Search Here..." />
                   <Link className="cart" to="/cart">Cart</Link>
-                  <Link className="seller" to="seller">Seller</Link>
+                  <Link className="seller" to="/seller">Seller</Link>
                   <Link className="login_btn" to="/Login">LOGIN</Link>
                 </div>
                 </header>

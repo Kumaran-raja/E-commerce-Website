@@ -4,7 +4,7 @@ function Aboutus() {
   return (
 
     <div className='section'>
-        <div className='container'>
+        <div className='container-fluid content_page_container'>
             <div className='row'>
                 <div className='col-12'>
                     <h1 className='about_page_headlines'>About Us</h1>

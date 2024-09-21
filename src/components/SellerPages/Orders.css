@@ -1,0 +1,60 @@
+.order_status_container{
+    display: grid;
+    grid-template-columns: 30% 25% 15%;
+    gap: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.order_status_type{
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px;
+}
+.order_view_box{
+    display: grid;
+    grid-template-columns: 10% 10% 15% 15% 20%;
+    margin: 20px;
+}
+.order_view{
+    cursor: pointer;
+    text-align: center;
+}
+.order_view:hover {
+    border-bottom: 4px solid blue;
+}
+  
+.order_view.active {
+    border-bottom: 4px solid blue;
+}
+.order_managing_list{
+    display: grid;
+    grid-template-columns: 30% 20% 20% 20% 10%;
+}
+@media (min-width: 769px) and (max-width: 1025px){
+    .order_status_container{
+    gap: 10px;
+    grid-template-columns: 35% 35% 25%;
+    }
+    .list_item_status_title{
+        font-size: 17px;
+        height: 30px;
+    }
+    .list_item_status{
+        font-size: 13px;
+    }
+    .order_view_box{
+        display: grid;
+        grid-template-columns: 10% 10% 20% 20% 30%;
+        margin: 20px;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1201px){
+    .order_status_container{
+        grid-template-columns: 30% 35% 20%;
+    }
+}
+@media only screen and (min-width: 1201px) {
+    .order_status_container{
+        grid-template-columns: 25% 30% 15%;
+    }
+}

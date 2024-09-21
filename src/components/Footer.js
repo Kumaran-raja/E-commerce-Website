@@ -14,25 +14,25 @@ function Footer() {
                 <Link className='footer_link' to='/aboutus'>
                 About Us
                 </Link>
-                <Link className='footer_link' to='/contactus'>
+                {/* <Link className='footer_link' to='/contactus'>
                 Career
                 </Link>
                 <Link className='footer_link' to='/contactus'>
                 Corporate Information
-                </Link>
+                </Link> */}
             </div>
             <div>
                 <h5 className='footer_title'>Help</h5>
-            <Link className='footer_link' to='/contactus'>
+            <Link className='footer_link' to='/payment'>
                 Payments
                 </Link>
-                <Link className='footer_link' to='/contactus'>
+                <Link className='footer_link' to='/shipping'>
                 Shipping
                 </Link>
-                <Link className='footer_link' to='/contactus'>
+                <Link className='footer_link' to='/Cancelandrefund'>
                 Cancellation & Returns
                 </Link>
-                <Link className='footer_link' to='/contactus'>
+                <Link className='footer_link' to='/FAQ'>
                 FAQ
                 </Link>
             </div>
@@ -48,17 +48,17 @@ function Footer() {
             </div>
             <div>
                 <h5 className='footer_title'>Consumer Policy</h5>
-                <Link className='footer_link' to='/contactus'>
+                <Link className='footer_link' to='/termsofuse'>
                 Terms of Use
                 </Link>
-                <Link className='footer_link' to='/contactus'>
+                <Link className='footer_link' to='/security'>
                 Security
                 </Link>
-                <Link className='footer_link' to='/contactus'>
+                <Link className='footer_link' to='/privacy'>
                 Privacy
                 </Link>
               
-              <p className='footer_text'>Phone Number: +1 (212) 555-7890<br/>Email: support@vibevault.com</p>
+              <p className='footer_text'>Phone Number: <a href='tel:+1 (212) 555-7890'>+1 (212) 555-7890</a><br/>Email: <a href='mailto:support@vibevault.com'>support@vibevault.com</a></p>
             </div>
 
         </div>

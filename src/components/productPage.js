@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import mobile from './images/category/mobile.png'
+import { useParams } from 'react-router-dom';
 import './productPage.css'
 function ProductPage() {
-  
+  const {id}=useParams();
   const [product,setProduct]=useState([]);
   const[error,setError]=useState('error')
 
 
   useEffect(()=>{
-    fetch('https://fakestoreapi.com/products')
+    fetch(`https://fakestoreapi.com/products/${id}`)
             .then(res=>res.json())
             .then(data=>{
               setProduct(data)
@@ -16,18 +17,16 @@ function ProductPage() {
             .catch(error=>{
               setError(error)
             })
-  },[])
+  },[id])
   return (
     <div>
         <div>
           <div id="carouselExample" className="carousel slide">
             <div className="carousel-inner product_carousel">
               {
-                product.slice(1,2).map((data,index)=>
-              <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={data.id}>
-                <img src={data.image} className="d-block product_carousel_img " alt="..."/>
+              <div className={"carousel-item active"}>
+                <img src={product.image} className="d-block product_carousel_img " alt="..."/>
               </div>
-                )
               }
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -40,14 +39,14 @@ function ProductPage() {
             </button>
           </div>
           {
-          product.slice(1,2).map(data => (
-            <div className='product_detail_content' key={data.id}>
-              <h3>{data.title}</h3>
-              <h2>${data.price}</h2>
-              <p>Category: {data.category}</p>
-              <p>{data.description}</p>
+          // product.slice(1,2).map(data => (
+            <div className='product_detail_content' key={product.id}>
+              <h3>{product.title}</h3>
+              <h2>${product.price}</h2>
+              <p>Category: {product.category}</p>
+              <p>{product.description}</p>
             </div>
-          ))
+          // ))
         }
        </div>
         

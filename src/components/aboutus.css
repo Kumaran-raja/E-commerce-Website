@@ -1,5 +1,5 @@
 .about_page_headlines{
-    font-size: 25px;
+    font-size: 20px;
     margin: 20px 0px;
     font-weight: bold;
 }
@@ -7,8 +7,38 @@
     text-align: justify;
 }
 .about_sub_title{
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px 0px;
     margin: 0px;
     font-weight: 500;
+}
+.content_page_container{
+    padding: 10px 20px;
+}
+.FAQ_Container{
+    display: grid;
+    width: 100%;
+    margin-top: 10px;
+    grid-template-columns: 90%;
+    
+}
+
+@media (min-width: 769px) and (max-width: 1025px){
+    .FAQ_Container{
+        display: grid;
+        grid-template-columns: 80%;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1201px){
+    .FAQ_Container{
+        display: grid;
+        grid-template-columns: 60%;
+    
+    }
+}
+@media (min-width: 1201px) and (max-width: 1600px){
+    .FAQ_Container{
+        display: grid;
+        grid-template-columns: 60%;
+    }
 }
