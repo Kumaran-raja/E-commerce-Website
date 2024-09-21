@@ -1,6 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:/contact
+Allow: /
 Allow: /login
 Allow: /signup
 Allow: /Category
