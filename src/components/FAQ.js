@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './aboutus.css';
-import downlist from './images/downlist.png'
+import { Helmet } from 'react-helmet'
 
 function FAQ() {
   const [Questions, setQuestions] = useState([
@@ -52,6 +52,13 @@ function FAQ() {
 
   return (
     <div className='section'>
+       <Helmet>
+          <title> FAQ - Vibevault</title>
+          <meta name="description" content="Find answers to common questions in Vibevault’s FAQ section. Get the information you need quickly and enhance your shopping experience." />
+          <meta name="keywords" content="Vibevault FAQ, Vibevault, Online Shopping" />
+
+          <link rel="canonical" href="https://vibevault.onrender.com/FAQ" />
+      </Helmet>
       <div className='container-fluid content_page_container'>
         <div className='row'>
           <div className='col-12'>

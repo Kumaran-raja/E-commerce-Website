@@ -1,27 +1,28 @@
-import React,{useEffect} from 'react';
-import Login from './components/login'
+import React, { useEffect,Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
-import Signup from './components/signup'
-import { BrowserRouter as Router, Route, Routes,useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/header';
-import Home from './components/home';
-import Cart from './components/cart';
-import CategoryPage from './components/CategoryPage';
-import SellerLogin from './components/SellerLogin';
-import ProductPage from './components/productPage';
-import ContactUs from './components/contactUs'
-import Footer from './components/Footer'
-import Aboutus from './components/aboutus'
-import SellerDashboard from './components/SellerDashboard'
-import SellerRegister from './components/SellerRegister';
-import SecurityPage from './components/SecurityPage';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import TermsOfUse from './components/TermsOfUse';
-import ShippingPolicy from './components/ShippingPolicy';
-import CancelandRefund from './components/CancelandRefund';
-import PaymentDetails from './components/PaymentDetails';
-import FAQ from './components/FAQ';
+import Footer from './components/Footer';
+import NotFound from './components/NotFound';
+const Home = lazy(() => import('./components/home'));
+const Login = lazy(() => import('./components/login'));
+const Signup = lazy(() => import('./components/signup'));
+const Cart = lazy(() => import('./components/cart'));
+const CategoryPage = lazy(() => import('./components/CategoryPage'));
+const ProductPage = lazy(() => import('./components/productPage'));
+const ContactUs = lazy(() => import('./components/contactUs'));
+const Aboutus = lazy(() => import('./components/aboutus'));
+const SellerDashboard = lazy(() => import('./components/SellerDashboard'));
+const SellerRegister = lazy(() => import('./components/SellerRegister'));
+const SecurityPage = lazy(() => import('./components/SecurityPage'));
+const SellerLogin = lazy(() => import('./components/SellerLogin'));
 
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
+const TermsOfUse = lazy(() => import('./components/TermsOfUse'));
+const ShippingPolicy = lazy(() => import('./components/ShippingPolicy'));
+const CancelandRefund = lazy(() => import('./components/CancelandRefund'));
+const PaymentDetails = lazy(() => import('./components/PaymentDetails'));
+const FAQ = lazy(() => import('./components/FAQ'));
 class Run extends React.Component {
   render() {
     function ScrollToTop() {
@@ -36,32 +37,29 @@ class Run extends React.Component {
     return (
       <Router>
        <ScrollToTop />
-        <div className='background_color'>
+       <Suspense fallback={''}>
           <Routes>
-            <Route path="/Login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} /> 
-            <Route path="/Category" element={<div><Header/><CategoryPage />  <Footer /></div>} /> 
-            <Route path="/product/:id" element={<div><Header/><ProductPage />  <Footer /></div>} /> 
-            <Route path="/" element={<div><Header/><Home />  <Footer /></div>} />
-            <Route path="/cart" element={<div><Header/><Cart /><Footer /></div>} />
-            <Route path="/seller" element={<div><SellerLogin /><Footer /></div>} />
-            <Route path="/aboutus" element={<div><Header /><Aboutus /><Footer /></div>} />
-            <Route path='/contactus' element={<ContactUs/>}/>
-            <Route path='/SellerDashboard' element={<SellerDashboard/>}/>
-            <Route path='/SellerRegister' element={<SellerRegister/>}/>
-            <Route path='/SellerLogin' element={<SellerLogin/>}/>
-            <Route path='/security' element={<div><Header /><SecurityPage /><Footer /></div>}/>
-            <Route path='/privacy' element={<div><Header /><PrivacyPolicy /><Footer /></div>}/>
-            <Route path='/termsofuse' element={<div><Header /><TermsOfUse /><Footer /></div>}/>
-            <Route path='/shipping' element={<div><Header /><ShippingPolicy /><Footer /></div>}/>
-            <Route path='/cancelandrefund' element={<div><Header /><CancelandRefund /><Footer /></div>}/>
-            <Route path='/payment' element={<div><Header /><PaymentDetails /><Footer /></div>}/>
-            <Route path='/FAQ' element={<div><Header /><FAQ /><Footer /></div>}/>
-
-
-            
+            <Route path="/" element={<><Header/><Home/><Footer/></>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/signup" element={<><Signup/></>} />
+            <Route path="/cart" element={<><Header/><Cart/><Footer/></>} />
+            <Route path="/Category" element={<><Header/><CategoryPage/><Footer/></>} />
+            <Route path="/product/:id" element={<><Header/><ProductPage/><Footer/></>} />
+            <Route path="/aboutus" element={<><Header/><Aboutus/><Footer/></>} />
+            <Route path="/contactus" element={<ContactUs/>} />
+            <Route path="/SellerDashboard" element={<SellerDashboard />} />
+            <Route path="/SellerRegister" element={<SellerRegister />} />
+            <Route path="/seller" element={<SellerLogin />} />
+            <Route path="/security" element={<><Header/><SecurityPage/><Footer/></>} />
+            <Route path="/privacy" element={<><Header/><PrivacyPolicy/><Footer/></>} />
+            <Route path="/termsofuse" element={<><Header/><TermsOfUse/><Footer/></>} />
+            <Route path="/shipping" element={<><Header/><ShippingPolicy/><Footer/></>} />
+            <Route path="/cancelandrefund" element={<><Header/><CancelandRefund/><Footer/></>} />
+            <Route path="/payment" element={<><Header/><PaymentDetails/><Footer/></>} />
+            <Route path="/FAQ" element={<><Header/><FAQ/><Footer/></>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
-        </div>
+        </Suspense>
       </Router>
     );
   }

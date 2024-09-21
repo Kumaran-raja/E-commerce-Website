@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import mobile from './images/category/mobile.png'
+import { Helmet } from 'react-helmet'
+
 import { useParams } from 'react-router-dom';
 import './productPage.css'
 function ProductPage() {
@@ -20,6 +21,11 @@ function ProductPage() {
   },[id])
   return (
     <div>
+       <Helmet>
+        <title>Products - Vibevault</title>
+        <meta name="description" content="Explore detailed information about your favorite products on Vibevault. Read reviews, view images, and make informed purchasing decisions with our comprehensive product descriptions." />
+        <link rel="canonical" href="https://vibevault.onrender.com/product" />
+      </Helmet>
         <div>
           <div id="carouselExample" className="carousel slide">
             <div className="carousel-inner product_carousel">

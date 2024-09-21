@@ -1,9 +1,16 @@
 import React from 'react'
 import './aboutus.css'
+import { Helmet } from 'react-helmet'
 function Aboutus() {
   return (
 
     <div className='section'>
+       <Helmet>
+        <title>About Us - Vibevault</title>
+        <meta name="description" content="Learn more about Vibevault and our mission to provide a seamless shopping experience. Discover our commitment to quality, customer satisfaction, and innovative solutions for your needs." />
+        <meta name="keywords" content="About Us, Vibevault, Online Shopping" />
+        <link rel="canonical" href="https://vibevault.onrender.com/aboutus" />
+      </Helmet>
         <div className='container-fluid content_page_container'>
             <div className='row'>
                 <div className='col-12'>

@@ -1,8 +1,15 @@
+import { Helmet } from 'react-helmet'
 import React from 'react'
 
 function PrivacyPolicy() {
   return (
     <div className='section'>
+         <Helmet>
+            <title>Privacy Policy - Vibevault</title>
+            <meta name="description" content="Read Vibevault’s Privacy Policy to understand how we collect, use, and protect your personal information while shopping with us." />
+        <meta name="keywords" content="Vibevault Privacy policy, Vibevault, Online Shopping" />
+        <link rel="canonical" href="https://vibevault.onrender.com/privacy" />
+        </Helmet>
         <div className='container-fluid content_page_container'>
             <div className='row'>
                 <div className='col-12'>

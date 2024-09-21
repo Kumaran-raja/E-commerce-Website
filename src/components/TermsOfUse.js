@@ -1,8 +1,15 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import './aboutus.css'
 function TermsOfUse() {
   return (
     <div className='section'>
+         <Helmet>
+            <title> Terms of Use - Vibevault</title>
+            <meta name="description" content="Review Vibevault’s Terms of Use for a clear understanding of your rights and responsibilities while using our platform." />
+        <meta name="keywords" content="Vibevault Terms of Use, Vibevault, Online Shopping" />
+        <link rel="canonical" href="https://vibevault.onrender.com/termsofuse" />
+        </Helmet>
         <div className='container-fluid content_page_container'>
             <div className='row'>
                 <div className='col-12'>

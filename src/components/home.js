@@ -1,4 +1,5 @@
 // import React from "react";
+import { Helmet } from 'react-helmet'
 import './home.css';
 import grocery from './images/category/grocery.png'
 import mobile from './images/category/mobile.png'
@@ -17,8 +18,8 @@ import React,{useEffect, useState} from "react";
 function Category(){
    
         const navigate=useNavigate();
-        const CategoryPage=()=> {
-            navigate('/Category');
+        const CategoryPage=(value)=> {
+            navigate(`/Category`);
         }
         const Categories=[
             {name:"Grocery",image:grocery,alt:"grocery Image"},
@@ -37,7 +38,7 @@ function Category(){
                     <div className="category_division" >
                 {
                     Categories.map((Category,index)=>(
-                        <div onClick={CategoryPage} key={index}>
+                        <div onClick={()=>{CategoryPage(Categories.name)}} key={index}>
                             <img className="category_img" src={Category.image} alt={Category.alt}/>
                             <p className="category_name">{Category.name}</p>
                         </div>
@@ -166,6 +167,12 @@ class Run extends React.Component{
     render(){
         return(
             <div>
+                  <Helmet>
+                    <title>Vibevault - Your One-Stop E-commerce Shop</title>
+                    <meta name="description" content="Discover a world of convenience at Vibevault! Explore our diverse range of products including groceries, electronics, fashion, and more, all at unbeatable prices. Enjoy a seamless shopping experience with secure payments and fast delivery." />
+                    <meta name="keywords" content="Vibevault, e-commerce, online shopping, grocery, mobiles, fashion, electronics, furniture, travel, toys, vehicles, best deals, shopping site" />
+                    <link rel="canonical" href="https://vibevault.onrender.com/" />
+                </Helmet>
                 <Category/>
                 <Carousel/>
                 <Popular/>

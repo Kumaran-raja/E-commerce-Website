@@ -1,8 +1,14 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import './aboutus.css'
 function SecurityPage() {
   return (
     <div className='section'>
+       <Helmet>
+        <title>Security - Vibevault</title>
+        <meta name="description" content="Your security is our priority at Vibevault. Learn about our commitment to protecting your data and providing a safe shopping environment." />
+        <link rel="canonical" href="https://vibevault.onrender.com/security" />
+      </Helmet>
         <div className='container-fluid content_page_container'>
             <div className='row'>
                 <div className='col-12'>

@@ -1,8 +1,14 @@
+import { Helmet } from 'react-helmet'
 import React from 'react'
 
 function ShippingPolicy() {
   return (
     <div className='section'>
+         <Helmet>
+            <title>ShippingPolicy - Vibevault</title>
+            <meta name="description" content= "Get detailed information about Vibevault’s shipping policies, including delivery times, charges, and locations served." />
+            <link rel="canonical" href="https://vibevault.onrender.com/shipping" />
+        </Helmet>
         <div className='container-fluid content_page_container'>
             <div className='row'>
                 <div className='col-12'>

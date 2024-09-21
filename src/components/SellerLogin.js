@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Helmet } from 'react-helmet'
 import './SellerLogin.css'
 import { useNavigate } from "react-router-dom";
 function SellerLogin() {
@@ -39,6 +39,11 @@ function SellerLogin() {
         }
         return(
             <div>
+                 <Helmet>
+                    <title>Seller Login - Vibevault</title>
+                    <meta name="description" content="Learn more about Vibevault and our mission to provide quality products." />
+                    <link rel="canonical" href="https://vibevault.onrender.com/seller" />
+                </Helmet>
                 <section>
                     <div className="container-fluid text-center">
                         <div className="row" >

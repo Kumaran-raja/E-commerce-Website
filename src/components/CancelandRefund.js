@@ -1,8 +1,16 @@
 import React from 'react'
-
+import { Helmet } from 'react-helmet'
+import './aboutus.css'
 function CancelandRefund() {
   return (
     <div className='section'>
+       <Helmet>
+        <title>About Us - Vibevault</title>
+        <meta name="description" content= "Learn about Vibevault’s cancellation and refund policy. We strive to make the process straightforward and hassle-free for our valued customers." />
+        <meta name="keywords" content="Cancel Order, Vibevault, Cancel and Refund,Vibevault Cancel Order and Refund" />
+
+        <link rel="canonical" href="https://vibevault.onrender.com/cancelandrefund" />
+      </Helmet>
         <div className='container-fluid content_page_container'>
             <div className='row'>
                 <div className='col-12'>

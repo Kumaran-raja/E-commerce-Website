@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import './CategoryPage.css';
 import React, { useState, useEffect } from 'react';
-
-function CategoryPage() {
+import { Helmet } from 'react-helmet';
+function CategoryPage({category}) {
   const [product, setProduct] = useState([]);
   const [error, setError] = useState("error");
   const [cartStates, setCartStates] = useState({});
@@ -36,6 +36,11 @@ function CategoryPage() {
 
   return (
     <div className='split_filer_space'>
+       <Helmet>
+        <title>CategoryPage - Vibevault</title>
+        <meta name="description" content="Browse through our extensive product categories at Vibevault. From electronics to fashion, find everything you need with ease and shop confidently with us." />
+        <link rel="canonical" href="https://vibevault.onrender.com/Category" />
+      </Helmet>
       <div className='filter'>
             <h6 class="cutomized_filter">Customized Filter</h6>
             <hr/>

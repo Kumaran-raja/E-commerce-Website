@@ -1,8 +1,15 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 function PaymentDetails() {
   return (
     <div className='section'>
+       <Helmet>
+        <title>Payment - Vibevault</title>
+        <meta name="description" content="Discover the various payment methods accepted at Vibevault. Enjoy secure transactions and a smooth checkout experience." />
+        <meta name="keywords" content="Payment issue in vibevault, Vibevault, Online Shopping" />
+        <link rel="canonical" href="https://vibevault.onrender.com/payment" />
+      </Helmet>
       <div className='container-fluid content_page_container'>
           <div className='row'>
               <div className='col-12'>

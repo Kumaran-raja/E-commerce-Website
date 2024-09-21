@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet'
 import logo from './images/logo.png'
 import './SellerDashboard.css'
 import Dashboard from './SellerPages/Dashboard'
@@ -15,6 +16,11 @@ function SellerDashboard() {
     return (
     
         <div className='seller_Dashboard_container'>
+             <Helmet>
+                <title>Seller Dashboard - Vibevault</title>
+                <meta name="description" content="Access your Seller Dashboard on Vibevault. Manage your listings, track sales, and optimize your store to reach a wider audience effortlessly." />
+                <link rel="canonical" href="https://vibevault.onrender.com/SellerDashboard" />
+            </Helmet>
             <div className='seller_menu'>
                 <img className='Seller_image' src={logo}/>
                 <p onClick={()=>{handlePages('dashboard')}} className='seller_menu_item'>Dashboard</p>

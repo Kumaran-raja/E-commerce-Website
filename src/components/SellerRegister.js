@@ -1,5 +1,7 @@
 import React from 'react'
 import './SellerRegister.css'
+import { Helmet } from 'react-helmet'
+
 import { useNavigate } from 'react-router-dom'
 function SellerRegister() {
   const navigate=useNavigate();
@@ -29,6 +31,11 @@ function SellerRegister() {
   }
   return (
     <div className='section'>
+       <Helmet>
+        <title>Seller Register - Vibevault</title>
+        <meta name="description" content="Become a seller on Vibevault! Register now to showcase your products to a growing audience and benefit from our robust platform designed for success." />
+        <link rel="canonical" href="https://vibevault.onrender.com/SellerRegister" />
+      </Helmet>
       <div className='constainer'>
         <div className='row'>
           <div className='col-5 seller_container text-center' style={{display:"block",marginLeft:"auto",marginRight:"auto",backgroundColor:"antiquewhite"}}>

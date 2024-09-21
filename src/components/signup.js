@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from 'react-helmet'
 
 import apple from './images/apple.png'
 import google from './images/google.png'
@@ -41,6 +42,12 @@ function Signup() {
         }
         return(
             <div>
+                 <Helmet>
+                    <title>Signup - Vibevault</title>
+                    <meta name="description" content="Join Vibevault today! Create your account and unlock access to exclusive offers, personalized recommendations, and a convenient shopping experience tailored to your preferences." />
+        <meta name="keywords" content="Vibevault Signup, Vibevault, Online Shopping" />
+        <link rel="canonical" href="https://vibevault.onrender.com/signup" />
+                </Helmet>
                 <section>
                     <div className="container-fluid text-center">
                         <div className="row" >

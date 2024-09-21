@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import apple from './images/apple.png';
 import google from './images/google.png';
 import facebook from './images/facebook.png';
+import { Helmet } from 'react-helmet'
 import './login.css';
 
 function Login() {
@@ -36,6 +37,13 @@ function Login() {
 
   return (
     <section>
+       <Helmet>
+        <title>Login - Vibevault</title>
+        <meta name="description" content="Log in to your Vibevault account to access your personalized shopping experience. Manage your orders, track shipments, and enjoy exclusive deals tailored just for you." />
+        <meta name="keywords" content="Login, Vibevault, Online Shopping,Vibevault purchase" />
+
+        <link rel="canonical" href="https://vibevault.onrender.com/login" />
+      </Helmet>
       <div className="container-fluid text-center">
         <div className="row" style={{backgroundColor:"white"}}>
           <div className="col-6 login_page_content">
