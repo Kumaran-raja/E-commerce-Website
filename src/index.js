@@ -16,28 +16,29 @@ const SellerDashboard = lazy(() => import('./components/SellerDashboard'));
 const SellerRegister = lazy(() => import('./components/SellerRegister'));
 const SecurityPage = lazy(() => import('./components/SecurityPage'));
 const SellerLogin = lazy(() => import('./components/SellerLogin'));
-
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfUse = lazy(() => import('./components/TermsOfUse'));
 const ShippingPolicy = lazy(() => import('./components/ShippingPolicy'));
 const CancelandRefund = lazy(() => import('./components/CancelandRefund'));
 const PaymentDetails = lazy(() => import('./components/PaymentDetails'));
 const FAQ = lazy(() => import('./components/FAQ'));
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 class Run extends React.Component {
   render() {
-    function ScrollToTop() {
-      const { pathname } = useLocation();
-    
-      useEffect(() => {
-        window.scrollTo(0, 0);
-      }, [pathname]);
-    
-      return null;
-    }
+   
     return (
       <Router>
        <ScrollToTop />
-       <Suspense fallback={''}>
+       <Suspense fallback={<div>Loading...</div>}>
+
           <Routes>
             <Route path="/" element={<><Header/><Home/><Footer/></>} />
             <Route path="/login" element={<Login/>} />
