@@ -5,7 +5,6 @@ import './header.css';
 class Header extends React.Component {
   render() {
     return (
-      
         <section>
           <div className="container-fluid" style={{padding:"0px"}}>
             <div className="row">
@@ -25,10 +24,7 @@ class Header extends React.Component {
             </div>
           </div>
         </section>
-       
-    
     );
   }
 }
-
 export default Header;

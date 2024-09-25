@@ -1,0 +1,23 @@
+{
+    "redirects": [
+      { "source": "/aboutus", "destination": "/index.html", "status": 200 },
+      { "source": "/contactus", "destination": "/index.html", "status": 200 },
+      { "source": "/login", "destination": "/index.html", "status": 200 },
+      { "source": "/signup", "destination": "/index.html", "status": 200 },
+      { "source": "/cart", "destination": "/index.html", "status": 200 },
+      { "source": "/Category", "destination": "/index.html", "status": 200 },
+      { "source": "/product/<*>", "destination": "/index.html", "status": 200 },
+      { "source": "/SellerDashboard", "destination": "/index.html", "status": 200 },
+      { "source": "/SellerRegister", "destination": "/index.html", "status": 200 },
+      { "source": "/seller", "destination": "/index.html", "status": 200 },
+      { "source": "/security", "destination": "/index.html", "status": 200 },
+      { "source": "/privacy", "destination": "/index.html", "status": 200 },
+      { "source": "/termsofuse", "destination": "/index.html", "status": 200 },
+      { "source": "/shipping", "destination": "/index.html", "status": 200 },
+      { "source": "/cancelandrefund", "destination": "/index.html", "status": 200 },
+      { "source": "/payment", "destination": "/index.html", "status": 200 },
+      { "source": "/FAQ", "destination": "/index.html", "status": 200 },
+      { "source": "/<*>", "destination": "/index.html", "status": 200 }
+    ]
+  }
+  
