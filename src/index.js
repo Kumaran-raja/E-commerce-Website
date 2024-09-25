@@ -33,35 +33,65 @@ function ScrollToTop() {
 }
 class Run extends React.Component {
   render() {
-   
     return (
       <Router>
-       <ScrollToTop />
-       <Suspense fallback={<div>Loading...</div>}>
+        <ScrollToTop />
+        <Header />
+        <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/" element={<><Header/><Home/><Footer/></>} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/signup" element={<><Signup/></>} />
-            <Route path="/cart" element={<><Header/><Cart/><Footer/></>} />
-            <Route path="/Category" element={<><Header/><CategoryPage/><Footer/></>} />
-            <Route path="/product/:id" element={<><Header/><ProductPage/><Footer/></>} />
-            <Route path="/aboutus" element={<><Header/><Aboutus/><Footer/></>} />
-            <Route path="/contactus" element={<ContactUs/>} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/category" element={<CategoryPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/aboutus" element={<Aboutus />} />
+            <Route path="/contactus" element={<ContactUs />} />
             <Route path="/SellerDashboard" element={<SellerDashboard />} />
             <Route path="/SellerRegister" element={<SellerRegister />} />
             <Route path="/seller" element={<SellerLogin />} />
-            <Route path="/security" element={<><Header/><SecurityPage/><Footer/></>} />
-            <Route path="/privacy" element={<><Header/><PrivacyPolicy/><Footer/></>} />
-            <Route path="/termsofuse" element={<><Header/><TermsOfUse/><Footer/></>} />
-            <Route path="/shipping" element={<><Header/><ShippingPolicy/><Footer/></>} />
-            <Route path="/cancelandrefund" element={<><Header/><CancelandRefund/><Footer/></>} />
-            <Route path="/payment" element={<><Header/><PaymentDetails/><Footer/></>} />
-            <Route path="/FAQ" element={<><Header/><FAQ/><Footer/></>} />
+            <Route path="/security" element={<SecurityPage />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/termsofuse" element={<TermsOfUse />} />
+            <Route path="/shipping" element={<ShippingPolicy />} />
+            <Route path="/cancelandrefund" element={<CancelandRefund />} />
+            <Route path="/payment" element={<PaymentDetails />} />
+            <Route path="/FAQ" element={<FAQ />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
+        <Footer />
       </Router>
     );
+    
+    // return (
+    //   <Router>
+    //    <ScrollToTop />
+    //    <Suspense fallback={<div>Loading...</div>}>
+    //       <Routes>
+    //         <Route path="/" element={<><Header/><Home/><Footer/></>} />
+    //         <Route path="/login" element={<Login/>} />
+    //         <Route path="/signup" element={<><Signup/></>} />
+    //         <Route path="/cart" element={<><Header/><Cart/><Footer/></>} />
+    //         <Route path="/Category" element={<><Header/><CategoryPage/><Footer/></>} />
+    //         <Route path="/product/:id" element={<><Header/><ProductPage/><Footer/></>} />
+    //         <Route path="/aboutus" element={<><Header/><Aboutus/><Footer/></>} />
+    //         <Route path="/contactus" element={<ContactUs/>} />
+    //         <Route path="/SellerDashboard" element={<SellerDashboard />} />
+    //         <Route path="/SellerRegister" element={<SellerRegister />} />
+    //         <Route path="/seller" element={<SellerLogin />} />
+    //         <Route path="/security" element={<><Header/><SecurityPage/><Footer/></>} />
+    //         <Route path="/privacy" element={<><Header/><PrivacyPolicy/><Footer/></>} />
+    //         <Route path="/termsofuse" element={<><Header/><TermsOfUse/><Footer/></>} />
+    //         <Route path="/shipping" element={<><Header/><ShippingPolicy/><Footer/></>} />
+    //         <Route path="/cancelandrefund" element={<><Header/><CancelandRefund/><Footer/></>} />
+    //         <Route path="/payment" element={<><Header/><PaymentDetails/><Footer/></>} />
+    //         <Route path="/FAQ" element={<><Header/><FAQ/><Footer/></>} />
+    //         <Route path="*" element={<NotFound />} />
+    //       </Routes>
+    //     </Suspense>
+    //   </Router>
+    // );
   }
 }
 
