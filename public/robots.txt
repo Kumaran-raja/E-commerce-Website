@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /contactus
-Disallow: /cart
+Allow: /
 
 Sitemap: https://vibevault.onrender.com/sitemap.xml

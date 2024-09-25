@@ -1,5 +1,6 @@
 {
     "redirects": [
+      { "source": "/", "destination": "/index.html", "status": 200 },
       { "source": "/aboutus", "destination": "/index.html", "status": 200 },
       { "source": "/contactus", "destination": "/index.html", "status": 200 },
       { "source": "/login", "destination": "/index.html", "status": 200 },
@@ -19,5 +20,4 @@
       { "source": "/FAQ", "destination": "/index.html", "status": 200 },
       { "source": "/*", "destination": "/index.html", "status": 200 }
     ]
-  }
-  
+}

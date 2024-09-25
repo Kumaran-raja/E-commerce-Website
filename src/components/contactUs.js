@@ -6,7 +6,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { FcCustomerSupport } from "react-icons/fc";
 import { IoPersonCircle } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet';
 function ContactUs() {
     const navigate=useNavigate();
     const scrollRef = useRef(null);
@@ -32,6 +32,10 @@ function ContactUs() {
  
   return (
     <div>
+        <Helmet>
+        <title>Contact Us - Vibe Vault</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
         <section>
            <div className='container text-center'>
                 <div className='row row_center'>

@@ -1,7 +1,7 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import './cart.css';
 import { useNavigate } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet';
 export default function Cart() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -80,6 +80,10 @@ export default function Cart() {
 
   return (
     <div className='cart_container'>
+      <Helmet>
+        <title>Cart - Vibe Vault</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <div className='cart_product_list_side'>
         {state.cartItems.map(data => (
           <div key={data.id}>
