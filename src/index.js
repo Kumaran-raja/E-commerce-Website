@@ -38,7 +38,6 @@ class Run extends React.Component {
       <Router>
        <ScrollToTop />
        <Suspense fallback={<div>Loading...</div>}>
-
           <Routes>
             <Route path="/" element={<><Header/><Home/><Footer/></>} />
             <Route path="/login" element={<Login/>} />
