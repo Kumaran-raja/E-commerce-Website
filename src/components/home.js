@@ -19,7 +19,7 @@ function Category(){
    
         const navigate=useNavigate();
         const CategoryPage=(value)=> {
-            navigate(`/Category`);
+            navigate(`/category`);
         }
         const Categories=[
             {name:"Grocery",image:grocery,alt:"grocery Image"},
